@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+
+    <h1>Sistema de Cadastro</h1>
+    <h3>Navegue pela nossa página</h3>
+
+    <a href="#cadastro">Cadastro</a> ||
+    <a href="#lista">Lista</a> ||
+    <a href="#contato">Contato</a>
+
+    <hr>
+
+    <h2 id="cadastro">Cadastro de Usuário</h2>
+
+    <center>
+        <form>
+
+            <label>Nome:</label><br>
+            <input type="text" name="nome"><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email"><br><br>
+
+            <label>Senha:</label><br>
+            <input type="password" name="senha"><br><br>
+
+            <label>Sexo:</label><br>
+
+            <input type="radio" name="sexo" value="feminino">
+            Feminino
+
+            <input type="radio" name="sexo" value="masculino">
+            Masculino
+
+            <br><br>
+
+            <label>Interesses:</label><br>
+
+            <input type="checkbox" name="interesse" value="programacao">
+            Programação
+
+            <input type="checkbox" name="interesse" value="design">
+            Design
+
+            <input type="checkbox" name="interesse" value="tecnologia">
+            Tecnologia
+
+            <input type="checkbox" name="interesse" value="tecnologia">
+            Artes
+
+            <input type="checkbox" name="interesse" value="tecnologia">
+            História
+
+            <input type="checkbox" name="interesse" value="tecnologia">
+            Filosofia
+
+            <br><br>
+
+            <label>Data de nascimento:</label><br>
+            <input type="date"><br><br>
+
+            <label>Cor favorita:</label><br>
+            <input type="color"><br><br>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+    </center>
+
+    <hr>
+
+    <h2 id="lista">Lista de Usuários Cadastrados</h2>
+
+    <center>
+        <table border="1">
+
+            <tr>
+                <th colspan="3">Usuários cadastrados</th>
+            </tr>
+
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Interesses</th>
+            </tr>
+
+            <tr>
+                <td rowspan="2">Sibelly</td>
+                <td>sibelly@edu.unifil.br</td>
+                <td>Programação</td>
+            </tr>
+
+            <tr>
+                <td>sibellyvivi@gmail.com</td>
+                <td>Programção e Tecnologia</td>
+            </tr>
+
+            <tr>
+                <td>Lorena</td>
+                <td>lorena@gmail.com</td>
+                <td>História e Filosofia</td>
+            </tr>
+
+        </table>
+    </center>
+
+    <hr>
+
+    <h2 id="contato">Extras</h2>
+
+    <h3>Clique na imagem abaixo para conhecer meu GitHub:</h3>
+
+    <center>
+        <a href="https://github.com/sibellyvih" target="_blank">
+        <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-tvx2BFjpYmfiIBLV25XIfVZy4KhCYFLB7w&s"
+            alt="Logo Google"
+            width="200">
+    </a>
+    </center>
+
+    <br><br>
+
+    <h3>Mapa de Sertanópolis</h3>
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14684.469475461752!2d-51.04994259585479!3d-23.056158251891908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb4add75585301%3A0x35eba2cdbee57a27!2sSertan%C3%B3polis%2C%20PR%2C%2086170-000!5e0!3m2!1spt-BR!2sbr!4v1778531851158!5m2!1spt-BR!2sbr" 
+width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</body>
+</html>
