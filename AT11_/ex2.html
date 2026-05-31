@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Neto</title>
+    <style>
+        header {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas:
+                "sidebar main";
+            gap: 20px;
+        }
+
+        aside {
+            grid-area: sidebar;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        .item {
+            background-color: rgb(216, 175, 255);
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .item:hover {
+            background-color: rgb(197, 138, 253);
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Conheça a história de Felipe Neto</h1>
+    </header>
+    <div class="grid">
+        <aside class="item">
+            <h2>Curiosidade</h2>
+            <p>A partir de 2018, Felipe Neto ampliou seu campo de atuação, tornando-se uma figura ativa no cenário
+                político e social do país. Em 2020, foi incluído na prestigiada lista da revista Time como uma das 100
+                pessoas mais influentes do mundo.
+            </p>
+        </aside>
+        <main class="item">
+            <h2>Quem é?</h2>
+            <p>Felipe Neto Rodrigues Vieira é um youtuber, empresário, comediante, escritor e filantropo brasileiro.
+                Possuiu em 2024 mais de 46,7 milhões de inscritos e mais de 18 bilhões de visualizações, e em 2019, foi
+                o youtuber solo do Brasil com o maior número de inscritos. Também tem cidadania portuguesa.
+                <br>Nascido no Rio de Janeiro, Felipe Neto teve uma infância humilde no subúrbio e, na adolescência, fez
+                cursos de teatro. Antes do YouTube, tentou empreender em diversas áreas — como design gráfico e um site
+                de downloads — e chegou a enfrentar a falência aos 22 anos. Em abril de 2010, lançou seu canal no
+                YouTube com vídeos críticos e humorísticos sobre comportamentos e celebridades da época (como Justin
+                Bieber e o filme Crepúsculo). Ele alcançou a marca histórica de ser o primeiro canal brasileiro a
+                atingir um milhão de inscritos.
+            </p>
+        </main>
+    </div>
+    <footer>
+        <h3>Gostou de conhecer sobre ele?</h3>
+        <a href="https://pt.wikipedia.org/wiki/Felipe_Neto">Clique para saber mais</a>
+    </footer>
+
+</body>
+
+</html>

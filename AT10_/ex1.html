@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de Produto com Box Model</title>
+    <style>
+        .card{
+            width: 300px;
+            border: 10px solid rgb(234, 114, 134);
+            padding: 20px;
+            margin: 30px;
+            box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+
+        .card:hover{
+            transform: scale(1.02);
+            border: 10px solid rgb(215, 89, 110);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Mouse Logitech rosa</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTr5NfgxaLJdruM8zMsHg657Gz6NqVHiyPqlTGyQ6KFTA7pCWjPTlFFgxyR0Bzmlr22_pKFMWONDFRskfcsVQBua1hmAYvDGEeJdM8BP_mgNmPp6QSKK-H-UM85zEfKNWf5IBnTDASDjQ&usqp=CAc"
+            alt="Imagem de mouse rosa da logitech">
+        <p>Mouse Sem Fio Logitech Signature M650 com Design de Tamanho Compacto, Clique Silencioso, Botões Laterais
+            Personalizáveis, Conexão USB e Bluetooth - Rose</p>
+        <button>Comprar</button>
+    </div>
+
+</body>
+
+</html>

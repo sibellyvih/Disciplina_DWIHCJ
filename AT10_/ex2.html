@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Fixo com Área de Conteúdo</title>
+    <style>
+        *{
+            margin: 0px;
+            text-align: center;
+        }
+        header{
+            position: fixed;
+            background-color: rgb(196, 196, 196);
+            width: 100%;
+            padding: 20px;
+            margin: 0px;
+        }
+
+        header:hover{
+            background-color: rgb(175, 175, 175);
+        }
+
+        nav{
+            padding: 15px;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            font-weight: bold;
+            color: rgb(0, 34, 120);
+        }
+        
+        main{
+            padding-top: 150px;
+        }
+
+        h2{
+            padding: 20px;
+        }
+
+        h3{
+            padding: 20px;
+        }
+        
+        p {
+            padding: 25px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="inicio">
+        <nav>
+            <h1>Conheça a primeira programadora da história</h1>
+            <a href="#inicio">Início</a> |
+            <a href="#principal">História</a> |
+            <a href="#rodape">Conheça mais</a>
+        </nav>
+    </header>
+    <hr>
+    <main id="principal">
+        <h2>Ada Lovelace</h2>
+        <p>Ada Lovelace (1815–1852) foi uma matemática e escritora inglesa, amplamente reconhecida como a primeira
+            programadora da história. Filha do poeta Lord Byron com a matemática Annabella Milbanke, ela criou o
+            primeiro algoritmo para a Máquina Analítica de Charles Babbage e previu que computadores processariam textos
+            e música.</p>
+        <img src="https://media.gazetadopovo.com.br/2019/05/30072214/ada-ff48e782.jpg" alt="Imagem de Ada Lovelace">
+        <h2>Educação</h2>
+        <p>Nascida Augusta Ada Byron em 10 de dezembro de 1815, em Londres, ela não teve contato com o pai, pois sua mãe
+            separou-se dele um mês após o seu nascimento e Lord Byron deixou a Grã-Bretanha. Temendo que a filha
+            desenvolvesse o temperamento impulsivo e "louco" do pai, a mãe de Ada garantiu-lhe uma educação rigorosa
+            voltada estritamente para a lógica, a ciência e a matemática — algo incomum para mulheres no século XIX.</p>
+    </main>
+    <hr>
+    <footer id="rodape">
+        <h3>Conheça mais sobre a história dela:</h3>
+        <a href="https://www.ufmg.br/espacodoconhecimento/blog-espaco/ada-lovelace-a-primeira-programadora-da-historia/">Saber mais</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de cards</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 150px;
+            height: 150px;
+            padding: 5px;
+            background-color: steelblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card1 {
+            background-color: rgb(201, 143, 255);
+        }
+
+        .card2 {
+            background-color: rgb(255, 167, 143);
+        }
+
+        .card3 {
+            background-color: rgb(255, 255, 119);
+        }
+
+        .card4 {
+            background-color: rgb(143, 255, 201);
+        }
+
+        .card5 {
+            background-color: rgb(143, 216, 255);
+        }
+
+        .card6 {
+            background-color: rgb(249, 143, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cumprimentos em inglês</h1>
+    <div class="container">
+        <div class="card card1">
+            <h2>Hello</h2>
+        </div>
+        <div class="card card2">
+            <h2>Wave your hand</h2>
+        </div>
+        <div class="card card3">
+            <h2>Hug</h2>
+        </div>
+        <div class="card card4">
+            <h2>Handshake</h2>
+        </div>
+        <div class="card card5">
+            <h2>High Five</h2>
+        </div>
+        <div class="card card6">
+            <h2>Good morning, good afternoon or good night</h2>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
