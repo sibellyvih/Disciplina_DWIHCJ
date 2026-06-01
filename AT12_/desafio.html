@@ -6,98 +6,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniFil - Cursos</title>
     <style>
-        .main{
-            background-color: black;
+        body {
+            background-color: #111;
+            color: white;
         }
 
-        .navegacao {
+        header {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
         }
 
-        .grid{
+        .sidebar {
+            background-color: #1e3a5f;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .layout {
             display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 250px 1fr;
             gap: 20px;
         }
 
-        .card{
-            background-color: rgb(255, 175, 99);
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1e3a5f;
             padding: 10px;
             border: 1px solid black;
             border-radius: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
         }
 
-        .card:hover{
-            transform: scale(1.01);
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        a {
+            color: #4fc3f7;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        button {
+            background-color: #2196f3;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(155, 193, 205);
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        @media(max-width:768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                text-align: center;
+            }
+        }
+
+        @media(max-width:480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navegacao {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
         }
     </style>
 </head>
 
 <body>
     <header id="inicio">
-        <h1>Conheça os cursos da UniFil</h1>
         <img src="https://unifil.br/assets/uploads/2022/11/logo-unifil.svg" alt="Logo da UniFil">
-            <nav class="navegacao">
-                <a href="#inicio">Início</a>
-                <a href="#cursos">Cursos</a>
-                <a href="#contato">Contato</a>
-            </nav>
+        <nav class="navegacao">
+            <a href="#inicio">Início</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#contato">Contato</a>
+
+            <button>Login</button>
+        </nav>
     </header>
     <hr>
+    <div class="layout">
+        <aside class="sidebar menu-lateral">
+            <h3>Categorias</h3>
+            <a href="#">Graduação</a><br>
+            <a href="#">Tecnólogo</a><br>
+            <a href="#">Licenciatura</a>
+        </aside>
 
-    <main class="grid">
-        <div class="card">
-            <h2>Administração Bacharelado</h2>
-            <p>O curso de Administração da UniFil é considerado um dos melhores do Sul do país. Isso porque na UniFil o
-                aluno tem a formação ampla e dinâmica que o mercado exige para atuar em diferentes setores da economia.
-            </p>
-            <a href=""></a>
-            <img src="data:image/jpeg;base64,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" alt="">
-        </div>
-        <div class="card">
-            <h2>Análise e Desenvolvimento de Sistemas Tecnólogo
-                Análise e Desenvolvimento de Sistemas Tecnólogo</h2>
-            <p>O curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas da UniFil EAD forma profissionais
-                com a capacidade para analisar, projetar, desenvolver, testar, implantar e manter sistemas
-                computacionais de informação.</p>
-            <a href=""></a><img src="" alt="">
-        </div>
-        <div class="card">
-            <h2>Biomediciona</h2>
-            <p>O curso de Biomedicina da UniFil tem ênfase nas áreas clínicas de imagenologia, biomedicina estética,
-                além de saúde pública, indústria, pesquisa e docência. O curso é destinado para pessoas que tenham
-                afinidade com a área de saúde, mas, especialmente, a fascinação pela pesquisa e análises clínicas.</p>
-            <a href=""></a><img src="" alt="">
-        </div>
-        <div class="card">
-            <h2>Ciência da Computação</h2>
-            <p>O Curso de Ciência da Computação da UniFil prepara o aluno de forma teórica e prática, para a crescente
-                demanda por profissionais da área. A profissão segue como uma das mais requisitadas do futuro. Os alunos
-                UniFil possuem um indíce de quase 100% de empregabilidade.</p>
-            <a href=""></a><img src="" alt="">
-        </div>
-        <div class="card">
-            <h2>Ciências Biológicas</h2>
-            <p>O Curso de Ciência da Computação da UniFil prepara o aluno de forma teórica e prática, para a crescente
-                demanda por profissionais da área. A profissão segue como uma das mais requisitadas do futuro. Os alunos
-                UniFil possuem um indíce de quase 100% de empregabilidade.</p>
-            <a href=""></a><img src="" alt="">
-        </div>
-        <div class="card">
-            <h2>História Licenciatura</h2>
-            <p>O curso de História da UniFil EAD proporciona formação crítica e reflexiva sobre os processos históricos
-                e culturais da humanidade. O estudante é conduzido ao estudo de fontes, teorias e métodos que permitem
-                compreender as transformações sociais e políticas ao longo do tempo.</p>
-            <a href=""></a><img src="" alt="">
-        </div>
-    </main>
+        <main id="cursos" class="grid">
+            <div class="card">
+                <h2>Administração Bacharelado</h2>
+                <p>O curso de Administração da UniFil é considerado um dos melhores do Sul do país. Isso porque na
+                    UniFil o
+                    aluno tem a formação ampla e dinâmica que o mercado exige para atuar em diferentes setores da
+                    economia.
+                </p>
+                <button>Saiba mais</button>
+                <img src="https://estaticos.animaeducacao.com.br/medias/20250514152757/-_Imagem_-_O_que_se_estuda_em_Administra%C3%A7%C3%A3o_confira_a_grade_curricular.webp"
+                    alt="Imagem ilustrando o curso de administração" width="50%">
+            </div>
+            <div class="card">
+                <h2>Análise e Desenvolvimento de Sistemas Tecnólogo</h2>
+                <p>O curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas da UniFil EAD forma
+                    profissionais
+                    com a capacidade para analisar, projetar, desenvolver, testar, implantar e manter sistemas
+                    computacionais de informação.</p>
+                <button>Saiba mais</button>
+                <img src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2020/10/Analise-e-Desenvolvimento-de-Sistemas_DCStudio_Freepik-scaled.jpg"
+                    alt="Imagem ilustrando o curso de ADS" width="50%">
+            </div>
+            <div class="card">
+                <h2>Biomedicina</h2>
+                <p>O curso de Biomedicina da UniFil tem ênfase nas áreas clínicas de imagenologia, biomedicina estética,
+                    além de saúde pública, indústria, pesquisa e docência. O curso é destinado para pessoas que tenham
+                    afinidade com a área de saúde, mas, especialmente, a fascinação pela pesquisa e análises clínicas.
+                </p>
+                <button>Saiba mais</button>
+                <img src="https://wordpress-cms-ufbra-prod-assets.quero.space/uploads/2023/12/biomedicina.jpg"
+                    alt="Imagem ilustrando o curso de biomedicina" width="50%">
+            </div>
+            <div class="card">
+                <h2>Ciência da Computação</h2>
+                <p>O Curso de Ciência da Computação da UniFil prepara o aluno de forma teórica e prática, para a
+                    crescente
+                    demanda por profissionais da área. A profissão segue como uma das mais requisitadas do futuro. Os
+                    alunos
+                    UniFil possuem um indíce de quase 100% de empregabilidade.</p>
+                <button>Saiba mais</button>
+                <img src="https://mercadoonlinedigital.com/wp-content/uploads/2023/12/ciencia-da-computacao-1.jpg"
+                    alt="Imagem ilustrando o curso ciência da computação" width="50%">
+            </div>
+            <div class="card">
+                <h2>Ciências Biológicas</h2>
+                <p>
+                    O curso de Ciências Biológicas da UniFil forma profissionais capacitados para compreender os seres
+                    vivos, seus processos e a relação com o meio ambiente. Durante a graduação, o estudante desenvolve
+                    conhecimentos em áreas como genética, zoologia, botânica, ecologia e microbiologia, além de
+                    participar de atividades práticas em laboratórios e pesquisas científicas.
+                </p>
+                <button>Saiba mais</button>
+                <img src="https://multivix.edu.br/wp-content/uploads/2018/10/ciencias-biologicas-multivix.jpg"
+                    alt="Imagem ilustrando o curso de ciências biológicas" width="50%">
+            </div>
+            <div class="card">
+                <h2>História Licenciatura</h2>
+                <p>O curso de História da UniFil EAD proporciona formação crítica e reflexiva sobre os processos
+                    históricos
+                    e culturais da humanidade. O estudante é conduzido ao estudo de fontes, teorias e métodos que
+                    permitem
+                    compreender as transformações sociais e políticas ao longo do tempo.</p>
+                <button>Saiba mais</button>
+                <img src="https://www.unilab.edu.br/wp-content/uploads/2017/04/Histo%CC%81ria.jpeg"
+                    alt="Imagem ilustrando o curso de história" width="50%">
+            </div>
+        </main>
+    </div>
+
     <hr>
-    <footer>
+    <footer id="contato">
         <h2>Ficou interessado em algum curso?</h2>
         <a href="mailto:cursos.unifil@edu.unifil.br">cursos.unifil@edu.unifil.br</a>
     </footer>
