@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem de Boas-Vindas</title>
+    <style>
+        #mensagem{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="mensagem">Boas-Vindas ao site</p>
+    <button id="botao">Mostrar mensagem</button>
+    <script>
+        document.getElementById("botao").addEventListener("click", function(){
+            document.getElementById("mensagem").style.display = "flex";
+        });
+    </script>
+</body>
+</html>

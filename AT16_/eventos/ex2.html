@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando imagem</title>
+</head>
+<body>
+     <img id="imagem" src="https://static.todamateria.com.br/upload/ba/nd/bandeira-do-brasil-og.jpg"
+        alt="bandeira do Brasil" width="70%">
+    <button id="botao">Altere a imagem</button>
+
+    <script>
+            document.getElementById("botao").addEventListener("click", function (){
+                document.getElementById("imagem").src = "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/a-taca-copa-mundo-possui-ouro-18-k-5b4891c8d1d6d.jpg";
+                });
+    </script>
+            
+              
+</body>
+</html>

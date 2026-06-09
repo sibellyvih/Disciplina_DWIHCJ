@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando cor do texto</title>
+</head>
+
+<body>
+    <p id="texto">A cor deste texto será alterado</p>
+    <button id="botao">Mudar cor</button>
+    <script>
+        document.getElementById("botao").addEventListener("click", function () {
+            document.getElementById("texto").style.color = "red";
+        });
+    </script>
+</body>
+
+</html>

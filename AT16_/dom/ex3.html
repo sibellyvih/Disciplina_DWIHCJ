@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando cor do fundo</title>
+    <style>
+        body {
+            background-color: rgb(255, 186, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <p>Clique no botão para mudar a cor de fundo</p>
+    <button onclick="alterarFundo()">Clique aqui</button>
+
+    <script>
+        function alterarFundo() {
+            document.querySelector("body").style.backgroundColor = "lightblue";
+        }
+    </script>
+</body>
+
+</html>

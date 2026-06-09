@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternar Fundo</title>
+</head>
+<body>
+
+    <button id="botao">
+        Alterar cor do fundo
+    </button>
+
+    <script>
+        let azul = true;
+
+        document.getElementById("botao").addEventListener("click", function () {
+            if (azul) {
+                document.body.style.backgroundColor = "lightblue";
+            } else {
+                document.body.style.backgroundColor = "lightpink";
+            }
+
+            azul = !azul;
+        });
+    </script>
+
+</body>
+</html>
