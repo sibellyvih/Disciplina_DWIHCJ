@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas Inteligente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #8c4caf;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #8c4caf;
+        }
+
+        #listaTarefas {
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .tarefa {
+            background-color: white;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tarefa strong {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gerenciador de Tarefas Inteligente</h1>
+
+    <label for="tarefa">Tarefa:</label>
+    <input type="text" id="tarefaNome" placeholder="Digite sua tarefa">
+
+    <br><br><label for="prioridade">Prioridade:</label>
+    <select id="prioridade">
+        <option value="Alta">Alta</option>
+        <option value="Média">Média</option>
+        <option value="Baixa">Baixa</option>
+    </select>
+
+    <br><br><button id="cadastrarBotao">Cadastrar</button>
+    <br><br><button id="mostrarBotao">Mostrar tarefas</button>
+    <div id="listaTarefas"></div>
+
+    <script>
+        let tarefas = [];
+
+        function cadastrarTarefa() {
+            let nomeTarefa = document.getElementById("tarefaNome").value;
+            let prioridade = document.getElementById("prioridade").value;
+
+            if (nomeTarefa === "") {
+                alert("Digite uma tarefa.");
+                return;
+            }
+
+            // Objeto
+            let tarefa = {
+                descricao: nomeTarefa,
+                prioridade: prioridade
+            };
+
+            // Array
+            tarefas.push(tarefa);
+
+            alert("Tarefa cadastrada com sucesso!");
+
+            document.getElementById("tarefaNome").value = "";
+        }
+
+
+
+        function mostrarTarefas() {
+            let lista = document.getElementById("listaTarefas");
+
+            lista.innerHTML = "";
+
+            for (let i = 0; i < tarefas.length; i++) {
+
+                lista.innerHTML += `
+            <div class="tarefa">
+                <strong>Tarefa:</strong> ${tarefas[i].descricao}<br>
+                <strong>Prioridade:</strong> ${tarefas[i].prioridade}
+            </div>
+        `;
+            }
+        }
+
+        document.getElementById("cadastrarBotao").addEventListener("click", cadastrarTarefa);
+        document.getElementById("mostrarBotao").addEventListener("click", mostrarTarefas);
+
+    </script>
+</body>
+
+</html>

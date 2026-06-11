@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voltando elemento escondido</title>
+
     <style>
-        #texto{
+        #texto {
             display: none;
         }
     </style>
 </head>
 
 <body>
-    <p id="texto">Este texto será mostrado</p>
-    <button onclick="mostrarTexto()">Mostrar</button>
-</body>
 
-<script>
-    function esconderTexto() {
-        document.getElementById("texto").style.display = "flex";
-    }
-</script>
+    <p id="texto">Este texto será mostrado</p>
+
+    <button onclick="mostrarTexto()">
+        Mostrar texto escondido
+    </button>
+
+    <script>
+        function mostrarTexto() {
+            document.getElementById("texto").style.display = "block";
+        }
+    </script>
+
+</body>
 
 </html>
