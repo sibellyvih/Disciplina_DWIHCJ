@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        body{
+            padding: 30px;
+            background-color: rgb(255, 168, 197);
+        }
+
+        li{
+            margin: 5px;
+            font-size: 20px;
+            border: solid 2px black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: beige;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tarefas</h1>
+    <input type="text" id="tarefaNome" placeholder="Escreva a tarefa">
+    <br><br><button id="botaoAdicionar">Adicionar</button>
+    <ul id="secaoTarefas"></ul>
+
+    <script>
+        let tarefas = [];
+        function adicionarTarefa() {
+            let conteudoTarefa = document.getElementById("tarefaNome").value;
+            if(conteudoTarefa === ""){
+                alert("Escreva uma tarefa!");
+                return;
+            } 
+
+            let tarefa = {
+                id: Date.now(),
+                texto: conteudoTarefa
+            };
+
+            tarefas.push(tarefa)
+
+            document.getElementById("tarefaNome").value = "";
+            renderizar();
+        }
+
+        function renderizar(){
+            let lista = document.getElementById("secaoTarefas");
+
+            lista.innerHTML = "";
+
+            tarefas.forEach(function (tarefa) {
+
+                let item = document.createElement("li");
+
+                item.textContent = tarefa.texto;
+
+                lista.appendChild(item);
+            });
+        }
+        document.getElementById("botaoAdicionar").addEventListener("click", adicionarTarefa)
+    </script>
+</body>
+
+</html>
