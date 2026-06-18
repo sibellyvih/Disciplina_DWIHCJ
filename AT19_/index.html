@@ -1,11 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculos de vendas</title>
+    <title>Sistema de análise de lucro</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: wheat;
+        }
+
+        .relatorio {
+            width: 400px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .destaque {
+            padding: 15px;
+            background-color: rgb(195, 158, 91);
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>Sistema de análise de lucro</h1>
+    <label>Nome do cliente</label>
+    <br><input type="text" id="nomeCliente">
+
+    <br><br><label>Nome do produto</label>
+    <br><input type="text" id="nomeProduto">
+
+    <br><br><label>Quantidade</label>
+    <br><input type="number" id="quantidade">
+
+    <br><br><label for="">Valor unitário do produto</label>
+    <br><input type="number" id="valorUnitario">
+
+    <br><br><button id="botaoCalcular">Calcular</button>
+
+    <div id="relatorio"></div>
+
+    <script>
+        function moeda(valor) {
+            return valor.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+        }
+
+        function calcular() {
+
+            let cliente = document.getElementById("nomeCliente").value;
+            let produto = document.getElementById("nomeProduto").value;
+            let quantidade = Number(document.getElementById("quantidade").value);
+            let custoUnitario = Number(document.getElementById("valorUnitario").value);
+
+            if (
+                cliente === "" ||
+                produto === "" ||
+                quantidade <= 0 ||
+                custoUnitario <= 0
+            ) {
+                alert("Preencha todos os campos corretamente!");
+                return;
+            }
+
+            let lucroUnitario = custoUnitario * 0.3;
+            let impostoUnitario = custoUnitario * 0.25;
+            let vendaUnitaria = custoUnitario + lucroUnitario + impostoUnitario;
+
+
+            let custoTotal = quantidade * custoUnitario;
+            let lucroTotalEsperado = quantidade * lucroUnitario;
+            let impostosTotais = quantidade * impostoUnitario;
+            let valorTotalRevenda = quantidade * vendaUnitaria;
+
+            document.getElementById("relatorio").innerHTML = `
+            <div class="relatorio">
+                <hr>
+                <h2>Relatório</h2>
+                <p>Cliente: ${cliente}</p>
+                <p>Produto: ${produto}</p>
+                <p>Quantidade: ${quantidade}</p>
+
+                <hr>
+
+                <h3>Valores unitários:</h3>
+                <p>Custo Unitário: ${moeda(custoUnitario)}</p>
+                <p>Lucro Unitário: ${moeda(lucroUnitario)}</p>
+                <p>Imposto unitário: ${moeda(impostoUnitario)}</p>
+                <p>Valor de venda unitária: ${moeda(vendaUnitaria)}</p>
+
+                <hr>
+
+                <h3>Totais:</h3>
+                <p>Custo Total: ${moeda(custoTotal)}</p>
+                <p>Lucro total: ${moeda(lucroTotalEsperado)}</p>
+                <p>Impostos totais: ${moeda(impostosTotais)}</p>
+                <p>Valor total de revenda: ${moeda(valorTotalRevenda)}</p>
+
+                <div class="destaque">
+                    Lucro Total Esperado<br>
+                    ${moeda(lucroTotalEsperado)}
+                </div>
+            </div>
+            `
+        }
+
+        document.getElementById("botaoCalcular").addEventListener("click", calcular);
+    </script>
 </body>
+
 </html>
